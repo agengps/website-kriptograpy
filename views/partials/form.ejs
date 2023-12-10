@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .form-container label {
+      font-weight: bold;
+    }
+
+    .form-container textarea,
+    .form-container input {
+      margin-bottom: 10px;
+    }
+
+    .form-container button {
+      margin-top: 10px;
+    }
+
+    .form-container input[type="file"] {
+      cursor: pointer;
+    }
+
+    .custom-file-label::after {
+      content: "Choose file";
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .flex-column {
+      flex-direction: column;
+    }
+
+    .justify-content-between {
+      justify-content: space-between;
+    }
+
+    .w-50 {
+      width: 50%;
+    }
+
+    .mb-3 {
+      margin-bottom: 1rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+
+    .btn-lg {
+      padding: 10px 20px;
+      font-size: 1.25rem;
+    }
+
+    .btn-danger {
+      background-color: rgb(59, 13, 45);
+      border-color: rgb(59, 13, 45);
+    }
+
+    .btn-danger:hover {
+      background-color: rgb(59, 13, 45);
+      border-color: rgb(59, 13, 45);
+    }
+
+    .form-label {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container mb-3">
+    <label for="plaintextString" class="form-label">Plain Text</label>
+    <textarea class="form-control" id="plaintextString" rows="3"></textarea>
+    <div class="d-flex justify-content-between">
+      <div class="w-50" id="keyFormEnc">
+        <label for="keyString" class="form-label">Key</label>
+        <input type="text" class="form-control" id="keyStringEnc">
+      </div>
+      <div id="encSubmit" class="d-flex flex-column">
+        <div class="custom-file mb-3">
+          <input type="file" name="File" id="encryptFile" class="custom-file-input" accept="text/plain">
+          <label class="custom-file-label ml-2" for="encryptFile"></label>
+        </div>
+        <button id="encryptBtn" type="button" class="btn btn-lg btn-danger">Encrypt</button>
+        <button id="save-encryption" type="button" class="btn btn-lg btn-danger mt-2">Save to File</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-container mb-3">
+    <label for="cyphertextString" class="form-label">Cipher Text</label>
+    <textarea class="form-control" id="cyphertextString" rows="3"></textarea>
+    <div class="d-flex justify-content-between">
+      <div class="w-50" id="keyFormDec">
+        <label for="keyString" class="form-label">Key</label>
+        <input type="text" class="form-control" id="keyStringDec">
+      </div>
+      <div id="decSubmit" class="d-flex flex-column">
+        <div class="custom-file mb-3">
+          <input type="file" name="File" id="decryptFile" class="custom-file-input" accept="text/plain">
+          <label class="custom-file-label ml-2" for="decryptFile"></label>
+        </div>
+        <button id="decryptBtn" type="button" class="btn btn-lg btn-danger">Decrypt</button>
+        <button id="save-decryption" type="button" class="btn btn-lg btn-danger mt-2">Save to File</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Update file input label with selected file name
+    $('.custom-file-input').on('change', function () {
+      var fileName = $(this).val().split('\\').pop();
+      $(this).next('.custom-file-label').html(fileName);
+    });
+  </script>
+
+</body>
+
+</html>

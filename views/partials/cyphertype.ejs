@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Head content goes here -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: rgb(59, 13, 45);
+    }
+
+    .navbar-toggler-icon {
+      background-color: #fff;
+    }
+
+    .navbar-nav .btn {
+      margin: 5px;
+      transition: transform 0.3s;
+    }
+
+    .navbar-nav .btn:hover {
+      transform: scale(1.1);
+    }
+    
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- Your buttons moved into the navbar -->
+        <li class="nav-item">
+          <button id="vigenere" type="button" class="btn btn-warning btn-outline-light btn-lg my-2" >Vigenere
+            Cypher</button>
+        </li>
+        <li class="nav-item">
+          <button id="auto-key-vigenere" type="button" class="btn btn-warning btn-outline-light btn-lg my-2">Auto-key
+            Vigenere</button>
+        </li>
+        <li class="nav-item">
+          <button id="extended-vigenere" type="button"
+            class="btn btn-warning btn-outline-light btn-lg my-2">Extended Vigenere</button>
+        </li>
+        <li class="nav-item">
+          <button id="affine" type="button" class="btn btn-warning btn-outline-light btn-lg my-2">Affine Cypher</button>
+        </li>
+        <li class="nav-item">
+          <button id="playfair" type="button" class="btn btn-warning btn-outline-light btn-lg my-2">Playfair
+            Cypher</button>
+        </li>
+        <li class="nav-item">
+          <button id="hill" type="button" class="btn btn-warning btn-outline-light btn-lg my-2">Hill Cypher</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
